@@ -1,0 +1,174 @@
+<!DOCTYPE.html>
+<head>
+  <script src="/assets/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+  <style>
+  body{
+ background: linear-gradient(top, rgba(red,blue,green,0), rgba(red,blue,green,1));
+   background: -webkit-linear-gradient(top, rgba(red,blue,green,0),rgba(red,blue,green,1));
+  }
+  div{
+    width:300px;
+    height:150px;
+    margin: 0 auto;
+    transition: all 0.3s ease-out;
+}
+.cat{
+
+}
+  .ear{
+    width: 5px;
+   height: 0;
+   border: 5px solid transparent;
+   border-top: 10px solid yellow;
+   border-bottom: 80px solid coral;
+   position: relative;
+
+
+
+  }
+  .top{
+    background: radial-gradient(circle, yellow 15%, transparent 40%), coral;
+ background: -moz-radial-gradient(circle, yellow 15%, transparent 40%), coral;
+ background: -webkit-radial-gradient(circle, yellow 15%, transparent 40%), coral;
+ background-size: 100px 170px;
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    background-color: blue;
+    border:10px solid black;
+    top:10px;
+
+  }
+  .laser{
+    animation: blink .5s infinite;
+  -moz-animation: blink .5s infinite;
+  -webkit-animation: blink .5s infinite;
+  }
+  @keyframes blink {
+  50%{
+    background: radial-gradient(circle,yellow 15%,transparent 40%), coral;
+  }
+}
+@-webkit-keyframes blink {
+50%{
+  background: -webkit-radial-gradient(circle,yellow 15%,transparent 40%), coral;
+}
+}
+@-moz-keyframes blink {
+50%{
+  background: -moz-radial-gradient(circle,yellow 15%,transparent 40%), coral;
+}
+}
+
+  .middle{
+    background: -webkit-repeating-linear-gradient(coral, yellow 10%, blue 20%); /* For Safari 5.1 to 6.0 */
+     background: -o-repeating-linear-gradient(coral, yellow 10%, blue 20%); /* For Opera 11.1 to 12.0 */
+     background: -moz-repeating-linear-gradient(coral, yellow 10%, blue 20%); /* For Firefox 3.6 to 15 */
+     background: repeating-linear-gradient(coral, yellow 10%, blue 20%); /* Standard syntax (must be last) */
+
+    width:350px;
+    height:350px;
+    border-radius: 50%;
+    background-color:  ;
+    border:10px solid black;
+    top:-200px;
+  }
+  .larm{
+    font-family: 'Poller One', verdana, arial, sans-serif;
+  font-weight:bold;
+  font-size:230px;
+
+  color:coral;
+  transform: rotate(220deg);
+  -webkit-transform:rotate(220deg);
+  -moz-transform:rotate(220deg);
+  position:relative;
+  left:-350px;
+  top:70px;
+z-index: -1;
+
+  }
+  .rarm{
+    font-family: 'Poller One', verdana, arial, sans-serif;
+  font-weight:bold;
+  font-size:230px;
+color:coral;
+transform: scaleY(-1) rotate(30deg);
+-webkit-transform:scaleY(-1) rotate(30deg);
+-moz-transform:scaleY(-1) rotate(30deg);
+position:relative;
+right:-350px;
+top:-50px;
+z-index: -1;
+  }
+  .leg{
+
+    font-family: 'Poller One', verdana, arial, sans-serif;
+  font-weight:bold;
+  font-size:250px;
+  color:coral;
+  transform:rotate(200deg);
+ -webkit-transform:rotate(200deg);
+ -moz-transform:rotate(200deg);
+ position:relative;
+ left:-230px;
+ top:18px;
+ z-index: -1;
+
+  }
+  .right{
+  font-family: 'Poller One', verdana, arial, sans-serif;
+  font-weight:bold;
+  font-size:250px;
+  color:coral;
+  transform:scaleY(-1) rotate(20deg);
+ -webkit-transform:scaleY(-1) rotate(20deg);
+ -moz-transform:scaleY(-1) rotate(20deg);
+ position:relative;
+ right:-230px;
+ top:-132px;
+ z-index: -1;
+  }
+h1{
+  color:black;
+text-align: center;
+font-size: 80px;
+text-shadow: 2px 2px;
+text-decoration: underline;
+}
+
+  </style>
+  </head>
+  <body>
+<h1>KEEP SMILING</h1>
+    <div class="ear"></div>
+
+<div class="top">
+
+</div>
+<div class="middle">
+  <div class="larm">j</div>
+  <div class="rarm">j</div>
+</div>
+<div class="leg">l</div>
+<div class="right">l</div>
+
+<button class="flash">laser eyes on/off</button>
+<button class="color">change color</button>
+<script>
+$(".flash").click(function(){
+  $(".top").toggleClass('laser');
+});
+$(".color").click(function(){
+  var red = Math.floor(Math.random() * 225);
+  var green = Math.floor(Math.random() * 255);
+ var blue = Math.floor(Math.random() * 255);
+ var randomRGBA= 'rgba('+red+','+green+','+blue+',1)';
+ $("body").css("background", randomRGBA);
+  //alert(number);
+
+});
+</script>
+  </body>
